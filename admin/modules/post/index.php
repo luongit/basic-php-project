@@ -2,6 +2,7 @@
 <div class="btn-group">
 	<?php echo Url_to('Thêm mới bài viết','post/add',['class'=>'btn btn-primary']); ?>
 </div>
+
 <?php 
 if(isset($_GET['id']) && getOne('post',['id'=>$_GET['id']])) :
 	$data = ['id'=>$_GET['id']];
@@ -18,6 +19,7 @@ if(isset($_GET['id']) && getOne('post',['id'=>$_GET['id']])) :
 		<strong>Ok!</strong> <?php echo $success; ?> ...
 	</div>
 <?php endif; ?>
+
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -38,10 +40,10 @@ if(isset($_GET['id']) && getOne('post',['id'=>$_GET['id']])) :
 			<td width="5%"><?php echo $n; ?></td>
 			<td width="10%"> <img src="../uploads/<?php echo $item['image']; ?>" class="img-responsive"></td>
 			<td >
-			<strong><?php echo $item['title']; ?></strong>
-			<p><?php echo substr($item['content'], 0,200); ?></p>
-			<p><strong>Slug:</strong> <?php echo $item['slug']; ?></p>
-			<p><strong>Danh mục:</strong> <?php echo $cate_name; ?></p>
+				<strong><?php echo $item['title']; ?></strong>
+				<p><?php echo substr($item['content'], 0,200); ?></p>
+				<p><strong>Slug:</strong> <?php echo $item['slug']; ?></p>
+				<p><strong>Danh mục:</strong> <?php echo $cate_name; ?></p>
 			</td>
 			<td width="10%">
 				<?php if($item['actived'] == 1) : ?>
@@ -53,7 +55,6 @@ if(isset($_GET['id']) && getOne('post',['id'=>$_GET['id']])) :
 			<td width="15%">
 				<?php echo Url_to('Sửa','post/edit&id='.$item['id'],['class'=>'btn btn-sm btn-success']); ?>
 				<?php echo Url_to('Xóa','post/index&id='.$item['id'],['class'=>'btn btn-sm btn-danger']); ?>
-			</td>
 		</tr>
 	<?php $n++;endforeach; ?>
 	</tbody>

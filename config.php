@@ -21,6 +21,7 @@ define('ASSETS_PATH', 'assets/');
 define('UPL_PATH', HOME_URL.'uploads/');
 
 define('TMPL_SITE', 'template'.DS.DEFAULT_TMPL.DS);
+
 /* Đwuongf dẫn vào admin folder *********************/
 
 define('ADMIN_PATH', 'admin'.DS);
@@ -41,10 +42,13 @@ $config['rewrite_url_site'] = true;
 
 require_once LIBR.'Database.php';
 require_once LIBR.'Url_helper.php';
+
 require_once LIBR.'String_helper.php';
 require_once LIBR.'Validation.php';
 require_once LIBR.'Functions.php';
 require_once LIBR.'upload_file.php';
+
+
 require_once LIBR.'Load_template.php';
 
 /* Load các hàm kết nối và xử lý database *************************/

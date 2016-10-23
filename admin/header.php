@@ -4,6 +4,7 @@ if(!isset($_SESSION['userInfo'])){
 	header('location: login.php');
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="">
 	<head>
@@ -60,7 +61,6 @@ if(!isset($_SESSION['userInfo'])){
 								<li>
 									<?php Url_to('Thêm mới Tài khoản','user/add'); ?>
 								</li>
-								
 							</ul>
 						</li>
 					</ul>
@@ -71,14 +71,11 @@ if(!isset($_SESSION['userInfo'])){
 						<button type="submit" class="btn btn-default">Submit</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Bảng điều khiển</a></li>
+				
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi <?php echo $_SESSION['userInfo']['username']; ?> <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li><a href="#">Separated link</a></li>
+								<li><a href="logout.php">Logout</a></li>
 							</ul>
 						</li>
 					</ul>

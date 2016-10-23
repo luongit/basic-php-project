@@ -50,6 +50,7 @@
 		</div>
 		<?php endif; ?>
 		<form action="" method="POST" role="form" enctype="multipart/form-data">
+		<h2>Thêm mới bài viết</h2>
 			<?php 
 				$cats = getAll('category');
 				// var_dump($cats);
@@ -65,6 +66,11 @@
 			<div class="row">
 				<div class="col-md-4">
 					<label for="">Chọn Danh mục</label>
+				<input type="text" class="form-control" name="slug" placeholder="Đwuongf dẫn tối ưu seo google">
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<label for="">Chọn Danh mục cha</label>
 					<select name="cate" id="input" class="form-control" >
 						<option value="">Không có</option>
 					
@@ -97,6 +103,7 @@
 				<textarea name="content" id="content" class="form-control" rows="3" ></textarea>
 			</div>
 			<button type="submit" name='submit' class="btn btn-primary">Thêm mới</button>
+			<button type="submit" class="btn btn-primary">Thêm mới</button>
 		</form>
 	</div>
 </div>
