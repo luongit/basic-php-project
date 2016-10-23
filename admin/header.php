@@ -1,3 +1,9 @@
+<?php 
+session_start();
+if(!isset($_SESSION['userInfo'])){
+	header('location: login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="">
 	<head>
@@ -7,11 +13,11 @@
 		<title>Title Page</title>
 
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="<?php echo ASSETS_PATH; ?>/css/bootstrap.min.css">
-		<link rel="stylesheet" href="<?php echo ASSETS_PATH; ?>/css/style.css">
+		<link rel="stylesheet" href="<?php echo ADMIN_ASSETS; ?>/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo ADMIN_ASSETS; ?>/css/style.css">
 	</head>
 	<body>
-		<div class="container">
+		<div class="container-fluid">
 			
 		<nav class="navbar navbar-inverse" role="navigation">
 			<div class="container-fluid">
@@ -23,14 +29,40 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<?php echo HOME_URL; ?>">Trang chủ</a>
+					<a class="navbar-brand" href="#">Title</a>
 				</div>
 		
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
+						<li><?php Url_to('Bảng điều khiển','home'); ?> </li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Bài viết <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>
+									<?php Url_to('Danh sách bài viết','post'); ?>
+								</li>
+								<li>
+									<?php Url_to('Thêm mới bài viết','post/add'); ?>
+								</li>
+								<li><
+									<?php Url_to('Danh mục bài viết','category'); ?>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tài khoản <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>
+									<?php Url_to('Danh sách Tài khoản','user'); ?>
+								</li>
+								<li>
+									<?php Url_to('Thêm mới Tài khoản','user/add'); ?>
+								</li>
+								
+							</ul>
+						</li>
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
@@ -39,7 +71,7 @@
 						<button type="submit" class="btn btn-default">Submit</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Link</a></li>
+						<li><a href="#">Bảng điều khiển</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 							<ul class="dropdown-menu">

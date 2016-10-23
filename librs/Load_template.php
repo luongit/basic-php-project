@@ -40,5 +40,26 @@ function load_template(){
 		require_once TMPL.'error.php'; 
 	}
 }
+function load_template_admin(){
+	$module = 'home';
+	$action = 'index';
+	$url = getUrl();
+	if($url){
+		$module = $url[0];
+	}
+	if(isset($url[1])){
+		$action = $url[1];
+	}
+
+	$viewPath = ADMIN_MODULE.$module.DS.$action.'.php';
+	/*
+		* Gọi file view tương ứng trên url
+	*/
+	if(file_exists($viewPath)){
+		require_once $viewPath; 
+	}else{
+		require_once ADMIN_MODULE.'home'.DS.'error.php'; 
+	}
+}
 
 ?>
