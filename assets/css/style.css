@@ -1,0 +1,25 @@
+#carousel-id .item{
+	max-height: 320px;
+	overflow: hidden;
+	width: 100%;
+}
+
+#carousel-id img{
+	width: 100%;
+}
+.books{
+	width: 100%;
+	float: left;
+	padding: 15px 0;
+}
+.book-title{
+	display: block;
+	padding:10px 0;
+	margin: 0;
+}
+
+.boock-item{
+	width: 100%;
+	float: left;
+	margin-bottom: 15px;
+}
